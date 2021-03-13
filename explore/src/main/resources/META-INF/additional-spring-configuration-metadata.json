@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "swagger.title",
+      "type": "java.lang.String",
+      "description": "title for swagger."
+    },
+    {
+      "name": "swagger.enabled",
+      "type": "java.lang.String",
+      "description": "Enable swagger."
+    },
+    {
+      "name": "swagger.description",
+      "type": "java.lang.String",
+      "description": "Description for swagger."
+    }
+  ] }
