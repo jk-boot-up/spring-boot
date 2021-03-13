@@ -1,4 +1,4 @@
-package com.jk.examples.java.streams.config;
+package com.jk.examples.java.core.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

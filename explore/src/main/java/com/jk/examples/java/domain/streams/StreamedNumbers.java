@@ -1,4 +1,4 @@
-package com.jk.examples.java.streams.domain;
+package com.jk.examples.java.domain.streams;
 
 import java.util.Arrays;
 import java.util.List;

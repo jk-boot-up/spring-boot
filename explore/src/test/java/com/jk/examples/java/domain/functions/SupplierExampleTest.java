@@ -1,4 +1,4 @@
-package com.jk.examples.java.functions;
+package com.jk.examples.java.domain.functions;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

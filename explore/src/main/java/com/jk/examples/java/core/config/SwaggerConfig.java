@@ -1,4 +1,4 @@
-package com.jk.examples.java.streams.config;
+package com.jk.examples.java.core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
-package com.jk.examples.java.streams.controllers;
+package com.jk.examples.java.core.controllers;
 
-import com.jk.examples.java.streams.domain.SimpleSum;
+import com.jk.examples.java.domain.streams.SimpleSum;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

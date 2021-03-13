@@ -1,7 +1,8 @@
-package com.jk.examples.java.streams;
+package com.jk.examples.java.domain.functions;
 
-import com.jk.examples.java.streams.domain.SimpleSum;
 
+
+import com.jk.examples.java.domain.streams.SimpleSum;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

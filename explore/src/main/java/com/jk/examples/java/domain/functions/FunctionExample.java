@@ -1,4 +1,4 @@
-package com.jk.examples.java.functions;
+package com.jk.examples.java.domain.functions;
 
 import lombok.Getter;
 import lombok.Setter;
