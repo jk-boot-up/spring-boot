@@ -39,31 +39,33 @@ public class PersonPropertiesV1 {
                 ", accountCredentials=" + accountCredentials +
                 '}';
     }
-}
 
-@Slf4j
-@Getter
-@Setter
-class AccountCredentials {
-    @NotNull
-    @Size(min = 1, max = 40)
-    private String loginId;
+    @Slf4j
+    @Getter
+    @Setter
+    public static class AccountCredentials {
+        @NotNull
+        @Size(min = 1, max = 40)
+        private String loginId;
 
-    @NotNull
-    @Size(min = 4, max = 40)
-    private String secretToken;
+        @NotNull
+        @Size(min = 4, max = 40)
+        private String secretToken;
 
-    public AccountCredentials() {
-        log.info("Created an instance of {}", AccountCredentials.class.getSimpleName());
+        public AccountCredentials() {
+            log.info("Created an instance of {}", AccountCredentials.class.getSimpleName());
+        }
+
+        @Override
+        public String toString() {
+            return "AccountCredentials{" +
+                    "loginId='" + loginId + '\'' +
+                    ", secretToken='" + secretToken + '\'' +
+                    '}';
+        }
     }
 
-    @Override
-    public String toString() {
-        return "AccountCredentials{" +
-                "loginId='" + loginId + '\'' +
-                ", secretToken='" + secretToken + '\'' +
-                '}';
-    }
 }
+
 
 
