@@ -1,4 +1,4 @@
-package com.jk.examples.java.domain.functions;
+package com.jk.examples.java.domain.streams;
 
 
 
