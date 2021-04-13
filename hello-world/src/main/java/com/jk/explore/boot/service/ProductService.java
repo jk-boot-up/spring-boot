@@ -1,6 +1,8 @@
 package com.jk.explore.boot.service;
 
+import com.jk.explore.boot.AlreadyExistsException;
 import com.jk.explore.boot.domain.Product;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -9,6 +11,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class ProductService {
 
     private ReentrantReadWriteLock productsRWLock = new ReentrantReadWriteLock();
@@ -81,6 +84,24 @@ public class ProductService {
             products = products.stream().filter(product1 -> !product1.getId().equals(id)).collect(Collectors.toList());
             productsRWLock.writeLock().unlock();
         }
+    }
+
+    public void create(Product product) throws AlreadyExistsException {
+        try {
+            productsRWLock.writeLock().lock();
+            if (product != null) {
+                Optional<Product> duplicateProduct = products.stream().filter(product1 -> product1.getId().equals(product.getId())).findFirst();
+                if(duplicateProduct.isPresent()) {
+                    log.info("product with id :{} already exists in collection", product.getId());
+                    throw new AlreadyExistsException("Product with id "+ product.getId()+" already present");
+                } else {
+                    products.add(product);
+                }
+            }
+        } finally {
+            productsRWLock.writeLock().unlock();
+        }
+
     }
 
 }
