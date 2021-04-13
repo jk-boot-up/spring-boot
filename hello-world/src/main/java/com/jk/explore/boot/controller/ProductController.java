@@ -6,6 +6,7 @@ import com.jk.explore.boot.service.ProductService;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +26,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @RequestMapping("/products")
+    @RequestMapping(value = "/products", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Product> all() {
         return getProductService().getAll();
     }

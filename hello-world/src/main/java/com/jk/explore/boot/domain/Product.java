@@ -16,14 +16,14 @@ public class Product {
     private String name;
     private String description;
     private String brand;
-    private Map<String, Object> spec;
+    private Map<String, String> spec;
 
     public static class Builder {
         private String id;
         private String name;
         private String description;
         private String brand;
-        private Map<String, Object> spec = new HashMap<>();
+        private Map<String, String> spec = new HashMap<>();
 
         public Builder() {
 
@@ -49,7 +49,7 @@ public class Product {
             return this;
         }
 
-        public Builder withSpec(Map<String, Object> spec) {
+        public Builder withSpec(Map<String, String> spec) {
             this.spec = spec;
             return this;
         }

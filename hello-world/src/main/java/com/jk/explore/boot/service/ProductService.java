@@ -23,12 +23,15 @@ public class ProductService {
     public void init() {
         productsRWLock.writeLock().lock();
         products = new ArrayList<>();
+        Map<String, String> iPadSpec  = new HashMap<>();
+        iPadSpec.put("price", String.valueOf(10000));
+        Map<String, String> iPhoneSpec  = new HashMap<>();
+        iPhoneSpec.put("price", String.valueOf(50000));
         products.add(new Product.Builder().withId("1").withName("iPad").withBrand("Apple").withDescription("Apple iPad")
-                .withSpec((Map<String, Object>) new HashMap<>().put("price", Integer.valueOf(10000))).build());
+                .withSpec(iPadSpec).build());
         products.add(new Product.Builder().withId("2").withName("iPhone").withBrand("Apple").withDescription("Apple iPhone")
-                .withSpec((Map<String, Object>) new HashMap<>().put("price", Integer.valueOf(70000))).build());
+                .withSpec(iPhoneSpec).build());
         productsRWLock.writeLock().unlock();
-
     }
 
     public Product getById(String id) {
